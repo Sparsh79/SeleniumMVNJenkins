@@ -22,13 +22,6 @@ public class Test1 {
         //send email address
         driver.findElement(By.cssSelector("#identifierId")).click();
         driver.findElement(By.cssSelector("#identifierId")).sendKeys("email");
-        driver.findElement(By.xpath("//*[@id='identifierNext']")).click();
-        Thread.sleep(5000);
 
-        //password
-        driver.findElement(By.cssSelector("#password")).click();
-        driver.findElement(By.xpath("//*[@id=\"password\"]/div[1]/div/div[1]/input")).sendKeys("!");
-        driver.findElement(By.cssSelector("#passwordNext")).click();
-        Thread.sleep(25000);
     }
 }
