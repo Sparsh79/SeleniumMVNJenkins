@@ -1,7 +1,7 @@
 
 cd selenium
 
-docker-compose -f docker-compose-chrome.yml up -d --build
+su root -c "docker-compose -f docker-compose-chrome.yml up -d --build"
 
 sleep 15
 
