@@ -1,8 +1,10 @@
-apt install libnss
-
-apt install libnss3-dev libgdk-pixbuf2.0-dev libgtk-3-dev libxss-dev
 
 cd selenium
-echo "starting test-script from directory: $ROOT"
+
+sudo docker-compose -f docker-compose-chrome.yml up -d --build
+
+sleep 15
+
+echo "Chrome image is up, will start the execution now"
 
 mvn test
