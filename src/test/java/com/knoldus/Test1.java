@@ -45,7 +45,7 @@ public class Test1 {
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver_linux64/chromedriver");
         ChromeOptions option = new ChromeOptions();
-        option.setHeadless(true);
+        option.addArguments("–headless");
         driver = new ChromeDriver(option);
         driver.manage().window().maximize();
         driver.get("https://accounts.google.com/");
