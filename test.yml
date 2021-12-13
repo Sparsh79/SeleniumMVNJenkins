@@ -14,4 +14,4 @@ outputs:
 run:
   path: /bin/bash
   args: 
-    - project/test-script.sh:
+    - SeleniumMVNJenkins/test-script.sh:
