@@ -1,7 +1,6 @@
-_ROOT=$(pwd)
-echo "starting test-script from directory: $ROOT"
+apt install libnss
 
-cd _ROOT
+apt install libnss3-dev libgdk-pixbuf2.0-dev libgtk-3-dev libxss-dev
 
 cd selenium
 echo "starting test-script from directory: $ROOT"
