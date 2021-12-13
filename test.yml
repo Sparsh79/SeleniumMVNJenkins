@@ -7,11 +7,11 @@ image_resource:
     tag: latest
 
 inputs:
-  - name: SeleniumMVNJenkin
+  - name: selenium
 outputs:
   - name: mvn-output
 
 run:
   path: /bin/bash
   args: 
-    - test-script.sh:
+    - selenium/test-script.sh:
