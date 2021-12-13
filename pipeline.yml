@@ -13,4 +13,4 @@ jobs:
     trigger: true
   - task: mvn-test
     privileged: true
-    file: SeleniumMVNJenkin/test.yml
+    file: test.yml
