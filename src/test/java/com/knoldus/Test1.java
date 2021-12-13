@@ -1,11 +1,12 @@
 package com.knoldus;
 
 import com.github.javafaker.Faker;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.*;
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -45,8 +46,10 @@ public class Test1 {
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver_linux64/chromedriver");
         ChromeOptions option = new ChromeOptions();
-        option.addArguments("–headless");
+        option.addArguments("–-headless");
+        option.setHeadless(true);
         driver = new ChromeDriver(option);
+
         driver.manage().window().maximize();
         driver.get("https://accounts.google.com/");
     }
@@ -61,9 +64,8 @@ public class Test1 {
         System.out.println(firstName + " " + lastName);
         System.out.println(modifiedDate);
 
-        //send email address
-        driver.findElement(By.cssSelector("#identifierId")).click();
-        driver.findElement(By.cssSelector("#identifierId")).sendKeys("email");
+        String URL = driver.getCurrentUrl();
+        Assert.assertTrue(URL.contains("accounts.google.com"));
 
     }
 }
