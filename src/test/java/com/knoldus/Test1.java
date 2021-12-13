@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 
 import java.text.SimpleDateFormat;
@@ -43,7 +44,9 @@ public class Test1 {
     @BeforeClass
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver_linux64/chromedriver");
-        driver = new ChromeDriver();
+        ChromeOptions option = new ChromeOptions();
+        option.setHeadless(true);
+        driver = new ChromeDriver(option);
         driver.manage().window().maximize();
         driver.get("https://accounts.google.com/");
     }
