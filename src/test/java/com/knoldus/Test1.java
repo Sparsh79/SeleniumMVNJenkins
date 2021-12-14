@@ -16,8 +16,8 @@ import java.util.GregorianCalendar;
 import java.util.Random;
 
 public class Test1 {
-//    WebDriver driver;
-WebDriver driver = new HtmlUnitDriver();
+    WebDriver driver;
+//WebDriver driver = new HtmlUnitDriver();
 
     Faker faker = new Faker();
     Date date = new Date();
@@ -47,12 +47,12 @@ WebDriver driver = new HtmlUnitDriver();
 
     @BeforeClass
     public void setUp() {
-//        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver_linux64/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver_linux64/chromedriver");
 //         WebDriver driver = new HtmlUnitDriver();
-//        ChromeOptions option = new ChromeOptions();
-//        option.addArguments("–-headless");
-//        option.setHeadless(true);
-//        driver = new ChromeDriver(option);
+        ChromeOptions option = new ChromeOptions();
+        option.addArguments("–-headless");
+        option.setHeadless(true);
+        driver = new ChromeDriver(option);
 
         driver.manage().window().maximize();
         driver.get("https://accounts.google.com/");
