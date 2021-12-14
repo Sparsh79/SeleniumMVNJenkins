@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -15,7 +16,9 @@ import java.util.GregorianCalendar;
 import java.util.Random;
 
 public class Test1 {
-    WebDriver driver;
+//    WebDriver driver;
+WebDriver driver = new HtmlUnitDriver();
+
     Faker faker = new Faker();
     Date date = new Date();
 
@@ -44,11 +47,12 @@ public class Test1 {
 
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver_linux64/chromedriver");
-        ChromeOptions option = new ChromeOptions();
-        option.addArguments("–-headless");
-        option.setHeadless(true);
-        driver = new ChromeDriver(option);
+//        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver_linux64/chromedriver");
+//         WebDriver driver = new HtmlUnitDriver();
+//        ChromeOptions option = new ChromeOptions();
+//        option.addArguments("–-headless");
+//        option.setHeadless(true);
+//        driver = new ChromeDriver(option);
 
         driver.manage().window().maximize();
         driver.get("https://accounts.google.com/");
@@ -67,5 +71,6 @@ public class Test1 {
         String URL = driver.getCurrentUrl();
         Assert.assertTrue(URL.contains("accounts.google.com"));
 
+//        driver.quit();
     }
 }
